@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "rimraf dev-dist && DEBUG=vite-plugin-pwa SW_DEV=true vite --force",
+    "dev": "rimraf dev-dist && vite",
     "dev-claims": "rimraf dev-dist && DEBUG=vite-plugin-pwa SW_DEV=true CLAIMS=true SW=true vite --force",
     "dev-destroy": "rimraf dev-dist && DEBUG=vite-plugin-pwa SW_DESTROY=true SW_DEV=true vite --force",
     "dev-claims-destroy": "rimraf dev-dist && DEBUG=vite-plugin-pwa SW_DESTROY=true SW_DEV=true CLAIMS=true SW=true vite --force",
@@ -16,7 +16,7 @@
     "start-sw-reloadsw": "nr run-build-sw-reloadsw && nr serve",
     "start-sw-claims": "nr run-build-sw-claims && nr serve",
     "start-sw-claims-reloadsw": "nr run-build-sw-claims-reloadsw && nr serve",
-    "build": "DEBUG=vite-plugin-pwa BASE_URL=/ SOURCE_MAP=true vite build",
+    "build": "vite build",
     "run-build": "DEBUG=vite-plugin-pwa BASE_URL=/ SOURCE_MAP=true vite build",
     "run-build-reloadsw": "DEBUG=vite-plugin-pwa BASE_URL=/ SOURCE_MAP=true RELOAD_SW=true vite build",
     "run-build-claims": "DEBUG=vite-plugin-pwa BASE_URL=/ SOURCE_MAP=true CLAIMS=true vite build",
@@ -48,6 +48,7 @@
     "test": "nr test-build-claims && nr test-build-sw-claims"
   },
   "dependencies": {
+    "debug": "^4.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.15.0",
